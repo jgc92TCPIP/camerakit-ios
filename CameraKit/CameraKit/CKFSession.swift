@@ -103,11 +103,15 @@ extension CKFSession.CameraPosition {
     }
     
     @objc public func start() {
-        self.session.startRunning()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.session.startRunning()
+        }
     }
     
     @objc public func stop() {
-        self.session.stopRunning()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.session.stopRunning()
+        }
     }
     
     @objc public func focus(at point: CGPoint) {

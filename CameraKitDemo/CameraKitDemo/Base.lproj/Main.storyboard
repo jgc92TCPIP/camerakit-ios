@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ijx-F8-xlM">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ijx-F8-xlM">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,7 +69,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbi-Fa-6xS">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7Y-ln-hAO">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7Y-ln-hAO">
                                                 <rect key="frame" x="34" y="22" width="58" height="28"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -80,7 +78,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                                 <state key="normal" title="More">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -101,8 +99,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdO-Yf-4xq">
                                         <rect key="frame" x="160" y="0.0" width="160" height="120"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtF-gF-F2f">
-                                                <rect key="frame" x="66.5" y="22" width="61" height="28"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtF-gF-F2f">
+                                                <rect key="frame" x="66" y="22" width="62" height="28"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="F2a-5d-ubg"/>
@@ -110,7 +108,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                                 <state key="normal" title="Video">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -215,6 +213,7 @@
                                 </connections>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="aKv-3L-GuP"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aKv-3L-GuP" firstAttribute="bottom" secondItem="ZfH-rM-4X2" secondAttribute="bottom" id="1Rv-T2-QkI"/>
@@ -229,7 +228,6 @@
                             <constraint firstItem="cs9-hk-xYz" firstAttribute="top" secondItem="0UD-h8-yNR" secondAttribute="bottom" id="kJz-Am-rhe"/>
                             <constraint firstItem="0UD-h8-yNR" firstAttribute="leading" secondItem="aKv-3L-GuP" secondAttribute="leading" id="p9o-80-d7e"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aKv-3L-GuP"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DJh-YE-Sr2" appends="YES" id="djN-Pz-yZx"/>
                         </connections>
@@ -263,11 +261,11 @@
             <objects>
                 <viewController id="lxP-pt-2Qu" customClass="PhotoPreviewViewController" customModule="CameraKitDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FdI-3C-ZPB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="cNr-mA-GaI">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="olh-OL-ahe">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
@@ -286,6 +284,7 @@
                                 </connections>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="8h9-7i-9Av"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cNr-mA-GaI" firstAttribute="top" secondItem="8h9-7i-9Av" secondAttribute="top" id="9Gv-uG-ZuG"/>
@@ -293,18 +292,17 @@
                             <constraint firstItem="cNr-mA-GaI" firstAttribute="leading" secondItem="8h9-7i-9Av" secondAttribute="leading" id="wJc-L8-PGz"/>
                             <constraint firstAttribute="bottom" secondItem="cNr-mA-GaI" secondAttribute="bottom" id="xWn-Ep-M84"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="8h9-7i-9Av"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Discard" id="bqA-bd-Gsw">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" systemColor="darkTextColor"/>
                             <connections>
                                 <action selector="handleCancel:" destination="lxP-pt-2Qu" id="FbC-pE-N0m"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="kr3-JZ-NOZ"/>
                         <barButtonItem title="Save to Library" style="done" id="GMs-Rv-ik5">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" systemColor="darkTextColor"/>
                             <connections>
                                 <action selector="handleSave:" destination="lxP-pt-2Qu" id="W7D-H0-9oU"/>
                             </connections>
@@ -319,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Du2-NC-JWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="88"/>
+            <point key="canvasLocation" x="-193" y="134"/>
         </scene>
         <!--Photo Settings View Controller-->
         <scene sceneID="umr-ZP-Lgv">
@@ -333,7 +331,7 @@
                             <tableViewSection id="8jU-qW-32X">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="7vd-5Q-IC1">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7vd-5Q-IC1" id="eBS-Ny-RNA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -346,12 +344,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D33-p8-bGs">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="Back"/>
                                                         <segment title="Front"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleCamera:" destination="ltB-Tn-DZA" eventType="valueChanged" id="gEe-6m-mN4"/>
                                                     </connections>
@@ -369,7 +367,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="p6r-ql-HrM">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p6r-ql-HrM" id="6h3-kW-75D">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -382,13 +380,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6cc-dT-IdE">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="Auto"/>
                                                         <segment title="On"/>
                                                         <segment title="Off"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleFlash:" destination="ltB-Tn-DZA" eventType="valueChanged" id="jKU-ul-yxp"/>
                                                     </connections>
@@ -406,7 +404,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="bPu-eg-5ic">
-                                        <rect key="frame" x="0.0" y="100" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bPu-eg-5ic" id="FFQ-Mn-5cD">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -419,12 +417,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QjN-Q0-OX1">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="Off"/>
                                                         <segment title="On"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleFace:" destination="ltB-Tn-DZA" eventType="valueChanged" id="mFp-ZY-SJU"/>
                                                     </connections>
@@ -442,7 +440,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="bJm-m2-ZF9">
-                                        <rect key="frame" x="0.0" y="150" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="200" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJm-m2-ZF9" id="ntt-gL-dfM">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -455,12 +453,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="reW-lH-QHM">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="Off"/>
                                                         <segment title="On"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleGrid:" destination="ltB-Tn-DZA" eventType="valueChanged" id="2vL-gY-qNc"/>
                                                     </connections>
@@ -478,7 +476,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="U45-WT-5ya">
-                                        <rect key="frame" x="0.0" y="200" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="250" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U45-WT-5ya" id="083-5e-dTe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -491,12 +489,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y1e-Lp-yLd">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="Wide"/>
                                                         <segment title="Square"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleMode:" destination="ltB-Tn-DZA" eventType="valueChanged" id="EG7-UL-KYB"/>
                                                     </connections>
@@ -539,11 +537,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" toolbarHidden="NO" id="If0-zh-CXb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YLG-l7-01b">
+                        <rect key="frame" x="0.0" y="-20" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Q7-6w-MYX">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="504" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -607,13 +606,21 @@
                                     <constraint firstItem="geg-uJ-o6S" firstAttribute="top" secondItem="aD4-vr-3Ay" secondAttribute="top" constant="8" id="pYD-MB-Rxl"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xb-vC-Mlh">
+                                <rect key="frame" x="122.5" y="266.5" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="handleCapturePhoto:" destination="GmM-IO-P9K" eventType="touchUpInside" id="4rv-kL-cyR"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImZ-dP-6IQ">
                                 <rect key="frame" x="0.0" y="448" width="320" height="120"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fg-F6-1kh">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vi-wz-Ar3">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vi-wz-Ar3">
                                                 <rect key="frame" x="34" y="22" width="58" height="28"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -622,7 +629,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                                 <state key="normal" title="More">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -643,7 +650,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybs-Uy-wOh">
                                         <rect key="frame" x="160" y="0.0" width="160" height="120"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-5O-Crr">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-5O-Crr">
                                                 <rect key="frame" x="66" y="22" width="62" height="28"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -652,7 +659,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                                 <state key="normal" title="Photo">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -757,6 +764,7 @@
                                 </connections>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="sSp-XZ-ylh"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ImZ-dP-6IQ" firstAttribute="leading" secondItem="sSp-XZ-ylh" secondAttribute="leading" id="1V6-pO-b9z"/>
@@ -764,14 +772,15 @@
                             <constraint firstItem="sSp-XZ-ylh" firstAttribute="bottom" secondItem="bfF-Po-PVM" secondAttribute="bottom" id="G6G-C6-bt5"/>
                             <constraint firstItem="sSp-XZ-ylh" firstAttribute="trailing" secondItem="H5V-hZ-kXh" secondAttribute="trailing" id="JBy-q5-VZw"/>
                             <constraint firstItem="sSp-XZ-ylh" firstAttribute="trailing" secondItem="ImZ-dP-6IQ" secondAttribute="trailing" id="KVa-pZ-IL1"/>
+                            <constraint firstItem="8Xb-vC-Mlh" firstAttribute="centerX" secondItem="nSx-eW-cIl" secondAttribute="centerX" id="MB4-Lz-omB"/>
                             <constraint firstAttribute="bottom" secondItem="ImZ-dP-6IQ" secondAttribute="bottom" id="NCs-xl-Ja0"/>
+                            <constraint firstItem="8Xb-vC-Mlh" firstAttribute="centerY" secondItem="nSx-eW-cIl" secondAttribute="centerY" id="UF1-3f-PSN"/>
                             <constraint firstItem="sSp-XZ-ylh" firstAttribute="trailing" secondItem="gUz-01-u2q" secondAttribute="trailing" id="UHd-40-m4B"/>
                             <constraint firstItem="H5V-hZ-kXh" firstAttribute="leading" secondItem="sSp-XZ-ylh" secondAttribute="leading" id="ZQf-KZ-Erc"/>
                             <constraint firstItem="H5V-hZ-kXh" firstAttribute="top" secondItem="sSp-XZ-ylh" secondAttribute="top" id="r2b-XE-gzV"/>
                             <constraint firstItem="sSp-XZ-ylh" firstAttribute="bottom" secondItem="H5V-hZ-kXh" secondAttribute="bottom" id="rc8-xK-EC1"/>
                             <constraint firstItem="gUz-01-u2q" firstAttribute="leading" secondItem="sSp-XZ-ylh" secondAttribute="leading" id="tTX-uD-cxu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="sSp-XZ-ylh"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="lS0-ae-g6z" appends="YES" id="2b9-A9-j01"/>
                         </connections>
@@ -796,7 +805,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-999" y="-1458"/>
+            <point key="canvasLocation" x="-1433" y="-1482"/>
         </scene>
         <!--Video Settings View Controller-->
         <scene sceneID="Vtc-5y-dcw">
@@ -810,7 +819,7 @@
                             <tableViewSection id="hLv-ab-tIB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="cd5-qp-73d">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cd5-qp-73d" id="wvi-YV-5Qu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -823,12 +832,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8GI-kc-VJl">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="Back"/>
                                                         <segment title="Front"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleCamera:" destination="P4c-8K-aGO" eventType="valueChanged" id="iFo-dH-uhI"/>
                                                     </connections>
@@ -846,7 +855,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="D3y-S4-M5m">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D3y-S4-M5m" id="tqc-NE-lPB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -859,13 +868,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="udY-q1-RuC">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="Auto"/>
                                                         <segment title="On"/>
                                                         <segment title="Off"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleFlash:" destination="P4c-8K-aGO" eventType="valueChanged" id="2ZK-ti-lzG"/>
                                                     </connections>
@@ -883,7 +892,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="8N7-9D-XlP">
-                                        <rect key="frame" x="0.0" y="100" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8N7-9D-XlP" id="G8r-Fp-J1S">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -896,12 +905,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2fA-xK-Exc">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="Off"/>
                                                         <segment title="On"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleGrid:" destination="P4c-8K-aGO" eventType="valueChanged" id="hJE-G1-Rum"/>
                                                     </connections>
@@ -919,7 +928,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="ilv-nq-Nyd">
-                                        <rect key="frame" x="0.0" y="150" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="200" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ilv-nq-Nyd" id="B8Z-p3-UCZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
@@ -932,13 +941,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZG6-KV-pes">
-                                                    <rect key="frame" x="144" y="11" width="160" height="29"/>
+                                                    <rect key="frame" x="144" y="9.5" width="160" height="32"/>
                                                     <segments>
                                                         <segment title="HD"/>
                                                         <segment title="HD@60"/>
                                                         <segment title="4K"/>
                                                     </segments>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="tintColor" systemColor="darkTextColor"/>
                                                     <connections>
                                                         <action selector="handleMode:" destination="P4c-8K-aGO" eventType="valueChanged" id="MyO-At-Vkt"/>
                                                     </connections>
@@ -980,19 +989,19 @@
                     <view key="view" contentMode="scaleToFill" id="Bgw-hl-RXy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sB9-Ve-X61"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Discard" id="HnT-bb-Vmb">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" systemColor="darkTextColor"/>
                             <connections>
                                 <action selector="handleCancel:" destination="V9E-ZN-BaH" id="0AD-Lv-oak"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="4Ph-A7-hUf"/>
                         <barButtonItem title="Save to Library" style="done" id="2uY-Cp-PIf">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" systemColor="darkTextColor"/>
                             <connections>
                                 <action selector="handleSave:" destination="V9E-ZN-BaH" id="JXY-uL-9Nz"/>
                             </connections>
@@ -1003,7 +1012,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgC-Vg-jSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="-2247"/>
+            <point key="canvasLocation" x="124" y="-2329"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="INX-uH-7F3">
@@ -1011,20 +1020,89 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" toolbarHidden="NO" id="Qql-y3-LLb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JpO-6z-Nvy">
+                        <rect key="frame" x="0.0" y="-20" width="0.0" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lrq-MI-D6G">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="504" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="V9E-ZN-BaH" kind="relationship" relationship="rootViewController" id="Czu-wz-2aV"/>
+                        <segue destination="gjh-ap-DxP" kind="relationship" relationship="rootViewController" id="q5g-bh-ckr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSL-Wq-qXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-999" y="-2247"/>
         </scene>
+        <!--Photo Preview View Controller-->
+        <scene sceneID="32B-Mk-11P">
+            <objects>
+                <viewController id="gjh-ap-DxP" customClass="PhotoPreviewViewController" customModule="CameraKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kZK-b7-PJM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZH4-Ft-IpB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRC-ns-wDU">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uRC-ns-wDU" firstAttribute="width" secondItem="ZH4-Ft-IpB" secondAttribute="width" id="1Wa-Qz-PoS"/>
+                                    <constraint firstAttribute="bottom" secondItem="uRC-ns-wDU" secondAttribute="bottom" id="7Bv-fr-c5h"/>
+                                    <constraint firstAttribute="trailing" secondItem="uRC-ns-wDU" secondAttribute="trailing" id="BQt-NV-4lt"/>
+                                    <constraint firstItem="uRC-ns-wDU" firstAttribute="height" secondItem="ZH4-Ft-IpB" secondAttribute="height" constant="-120" id="JDz-Tg-wVM"/>
+                                    <constraint firstItem="uRC-ns-wDU" firstAttribute="top" secondItem="ZH4-Ft-IpB" secondAttribute="top" id="KW2-z0-iiz"/>
+                                    <constraint firstItem="uRC-ns-wDU" firstAttribute="leading" secondItem="ZH4-Ft-IpB" secondAttribute="leading" id="dNN-AR-cag"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="gjh-ap-DxP" id="hUh-0T-alo"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oD9-j7-Q9C"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZH4-Ft-IpB" firstAttribute="top" secondItem="oD9-j7-Q9C" secondAttribute="top" id="3TS-dS-Bxl"/>
+                            <constraint firstItem="oD9-j7-Q9C" firstAttribute="trailing" secondItem="ZH4-Ft-IpB" secondAttribute="trailing" id="9N0-1n-zdT"/>
+                            <constraint firstItem="ZH4-Ft-IpB" firstAttribute="leading" secondItem="oD9-j7-Q9C" secondAttribute="leading" id="kXK-ky-r5y"/>
+                            <constraint firstAttribute="bottom" secondItem="ZH4-Ft-IpB" secondAttribute="bottom" id="mS2-dn-sSH"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Discard" id="IKl-Dd-iYv">
+                            <color key="tintColor" systemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="handleCancel:" destination="gjh-ap-DxP" id="oFZ-Ib-ea7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ywZ-Tx-sPH"/>
+                        <barButtonItem title="Save to Library" style="done" id="cfO-Fv-loe">
+                            <color key="tintColor" systemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="handleSave:" destination="gjh-ap-DxP" id="j8e-WY-59L"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="rlp-3n-795"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="uRC-ns-wDU" id="FPu-xk-gUv"/>
+                        <outlet property="scrollView" destination="ZH4-Ft-IpB" id="RTo-DJ-8cs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2iv-YA-8CY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="499" y="-1654"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

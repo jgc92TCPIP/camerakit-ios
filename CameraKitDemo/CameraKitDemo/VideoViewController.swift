@@ -98,6 +98,8 @@ class VideoViewController: UIViewController, CKFSessionDelegate {
             vc.previewView = self.previewView
         } else if let nvc = segue.destination as? UINavigationController, let vc = nvc.children.first as? VideoPreviewViewController {
             vc.url = sender as? URL
+        } else if let nvc = segue.destination as? UINavigationController, let vc = nvc.children.first as? PhotoPreviewViewController {
+            vc.image = sender as? UIImage
         }
     }
     
@@ -105,6 +107,12 @@ class VideoViewController: UIViewController, CKFSessionDelegate {
         didSet {
             let session = CKFVideoSession()
             session.delegate = self
+            
+//            session.cameraDetection = .faces
+            
+//            session.onFaceDetected = {
+//                print("Face detected!!!")
+//            }
             
             self.previewView.autorotate = true
             self.previewView.session = session
@@ -145,6 +153,18 @@ class VideoViewController: UIViewController, CKFSessionDelegate {
             self.panelView.transform = CGAffineTransform(translationX: 0, y: 0)
         }
     }
+    
+    @IBAction func handleCapturePhoto(_ sender: Any) {
+        if let session = self.previewView.session as? CKFVideoSession {
+            session.capturePhoto { image, _ in
+                print("photo taken")
+                print(image?.size)
+                self.performSegue(withIdentifier: "Preview", sender: image)
+            }
+        }
+    }
+    
+    
     
     @IBAction func handleCapture(_ sender: UIButton) {
         if let session = self.previewView.session as? CKFVideoSession {

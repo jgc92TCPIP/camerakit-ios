@@ -19,9 +19,75 @@ extension CKFSession.FlashMode {
     }
 }
 
-@objc public class CKFVideoSession: CKFSession, AVCaptureFileOutputRecordingDelegate {
+@objc public class CKFVideoSession: CKFSession, AVCaptureFileOutputRecordingDelegate, AVCaptureMetadataOutputObjectsDelegate, AVCapturePhotoCaptureDelegate {
     
     @objc public private(set) var isRecording = false
+    
+    let photoOutput = AVCapturePhotoOutput()
+    
+    @objc public var onFaceDetected: (() -> Void)?
+    
+    @objc public enum CameraDetectionVideo: UInt {
+        case none, faces
+    }
+    
+    @objc public var cameraDetection = CameraDetectionVideo.none {
+        didSet {
+            if oldValue == self.cameraDetection { return }
+            
+            for output in self.session.outputs {
+                if output is AVCaptureMetadataOutput {
+                    self.session.removeOutput(output)
+                }
+            }
+            
+            self.faceDetectionBoxes.forEach({ $0.removeFromSuperview() })
+            self.faceDetectionBoxes = []
+            
+            if self.cameraDetection == .faces {
+                let metadataOutput = AVCaptureMetadataOutput()
+                self.session.addOutput(metadataOutput)
+                
+                metadataOutput.setMetadataObjectsDelegate(self, queue: .main)
+                if metadataOutput.availableMetadataObjectTypes.contains(.face) {
+                    metadataOutput.metadataObjectTypes = [.face]
+                }
+            }
+        }
+    }
+    
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        let faceMetadataObjects = metadataObjects.filter({ $0.type == .face })
+        
+        if faceMetadataObjects.count > self.faceDetectionBoxes.count {
+            for _ in 0..<faceMetadataObjects.count - self.faceDetectionBoxes.count {
+                let view = UIView()
+                view.layer.borderColor = UIColor.green.cgColor
+                view.layer.borderWidth = 1
+                self.overlayView?.addSubview(view)
+                self.faceDetectionBoxes.append(view)
+            }
+        } else if faceMetadataObjects.count < self.faceDetectionBoxes.count {
+            for _ in 0..<self.faceDetectionBoxes.count - faceMetadataObjects.count {
+                self.faceDetectionBoxes.popLast()?.removeFromSuperview()
+            }
+        }
+        
+        for i in 0..<faceMetadataObjects.count {
+            if let transformedMetadataObject = self.previewLayer?.transformedMetadataObject(for: faceMetadataObjects[i]) {
+                self.faceDetectionBoxes[i].frame = transformedMetadataObject.bounds
+            } else {
+                self.faceDetectionBoxes[i].frame = CGRect.zero
+            }
+        }
+        
+        // Trigger the callback if a face is detected
+        if !faceMetadataObjects.isEmpty {
+            self.onFaceDetected?()
+        }
+    }
+
+    var faceDetectionBoxes: [UIView] = []
     
     @objc public var cameraPosition = CameraPosition.back {
         didSet {
@@ -102,6 +168,40 @@ extension CKFSession.FlashMode {
         
         self.session.sessionPreset = .hd1920x1080
         self.session.addOutput(self.movieOutput)
+        
+        // Photo Output
+        if self.session.canAddOutput(photoOutput) {
+            self.session.addOutput(photoOutput)
+            // Configure your photoOutput settings if necessary
+        }
+    }
+    
+    // Capture photo
+    @objc public func capturePhoto(completion: @escaping (UIImage?, Error?) -> Void) {
+        let settings = AVCapturePhotoSettings()
+        // Configure settings if needed, e.g., settings.flashMode = .auto
+
+        photoOutput.capturePhoto(with: settings, delegate: self)
+        self.photoCaptureCompletion = completion
+    }
+
+    // Keep a reference for the completion handler
+    private var photoCaptureCompletion: ((UIImage?, Error?) -> Void)?
+
+    @available(iOS 11.0, *)
+    public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let error = error {
+            photoCaptureCompletion?(nil, error)
+            return
+        }
+
+        guard let imageData = photo.fileDataRepresentation() else {
+            photoCaptureCompletion?(nil, NSError(domain: "CKFVideoSession", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unable to retrieve image data"]))
+            return
+        }
+
+        let image = UIImage(data: imageData)
+        photoCaptureCompletion?(image, nil)
     }
     
     var recordCallback: (URL) -> Void = { (_) in }
