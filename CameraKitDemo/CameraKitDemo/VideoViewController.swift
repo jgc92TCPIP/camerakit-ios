@@ -96,10 +96,19 @@ class VideoViewController: UIViewController, CKFSessionDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? VideoSettingsViewController {
             vc.previewView = self.previewView
-        } else if let nvc = segue.destination as? UINavigationController, let vc = nvc.children.first as? VideoPreviewViewController {
-            vc.url = sender as? URL
-        } else if let nvc = segue.destination as? UINavigationController, let vc = nvc.children.first as? PhotoPreviewViewController {
-            vc.image = sender as? UIImage
+        } else if let nvc = segue.destination as? UINavigationController {
+            for childVC in nvc.children {
+                print(nvc.children.count)
+                if let vc = childVC as? VideoPreviewViewController {
+                    vc.url = sender as? URL
+                    break
+                }
+                
+                if let vc = childVC as? PhotoPreviewViewController {
+                    vc.image = sender as? UIImage
+                    break
+                }
+            }
         }
     }
     
@@ -108,11 +117,15 @@ class VideoViewController: UIViewController, CKFSessionDelegate {
             let session = CKFVideoSession()
             session.delegate = self
             
-//            session.cameraDetection = .faces
+            session.cameraDetection = .faces
             
-//            session.onFaceDetected = {
-//                print("Face detected!!!")
-//            }
+            session.onFaceDetected = {
+                print("Face detected!!!")
+            }
+            
+            session.onNoFaceDetected = {
+                print("NO FACE!!!")
+            }
             
             self.previewView.autorotate = true
             self.previewView.session = session
@@ -159,7 +172,7 @@ class VideoViewController: UIViewController, CKFSessionDelegate {
             session.capturePhoto { image, _ in
                 print("photo taken")
                 print(image?.size)
-                self.performSegue(withIdentifier: "Preview", sender: image)
+                self.performSegue(withIdentifier: "PreviewPhoto", sender: image)
             }
         }
     }

@@ -791,6 +791,7 @@
                         <outlet property="previewView" destination="aD4-vr-3Ay" id="Nkz-Q6-QBD"/>
                         <outlet property="zoomLabel" destination="Vgm-xz-SIc" id="5W1-rV-OMx"/>
                         <segue destination="Qql-y3-LLb" kind="presentation" identifier="Preview" modalTransitionStyle="crossDissolve" id="6Wy-B1-H7W"/>
+                        <segue destination="Vce-jA-meP" kind="presentation" identifier="PreviewPhoto" id="U1t-nf-U5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWL-hm-jK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -805,7 +806,23 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1433" y="-1482"/>
+            <point key="canvasLocation" x="-1614" y="-1565"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m4J-qH-L81">
+            <objects>
+                <navigationController id="Vce-jA-meP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pju-C1-ahP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gjh-ap-DxP" kind="relationship" relationship="rootViewController" id="xkE-3X-T84"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEz-gI-RTy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-493" y="-1565"/>
         </scene>
         <!--Video Settings View Controller-->
         <scene sceneID="Vtc-5y-dcw">
@@ -980,14 +997,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQM-iB-i60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="-1459"/>
+            <point key="canvasLocation" x="-298" y="-1114"/>
         </scene>
         <!--Video Preview View Controller-->
         <scene sceneID="gxQ-1k-Q05">
             <objects>
                 <viewController id="V9E-ZN-BaH" customClass="VideoPreviewViewController" customModule="CameraKitDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bgw-hl-RXy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="sB9-Ve-X61"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1029,7 +1046,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="gjh-ap-DxP" kind="relationship" relationship="rootViewController" id="q5g-bh-ckr"/>
+                        <segue destination="V9E-ZN-BaH" kind="relationship" relationship="rootViewController" id="yPv-7z-l7i"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSL-Wq-qXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1045,10 +1062,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZH4-Ft-IpB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="56" width="320" height="492"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRC-ns-wDU">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>

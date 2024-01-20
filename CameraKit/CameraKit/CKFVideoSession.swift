@@ -26,6 +26,7 @@ extension CKFSession.FlashMode {
     let photoOutput = AVCapturePhotoOutput()
     
     @objc public var onFaceDetected: (() -> Void)?
+    @objc public var onNoFaceDetected: (() -> Void)?
     
     @objc public enum CameraDetectionVideo: UInt {
         case none, faces
@@ -84,7 +85,10 @@ extension CKFSession.FlashMode {
         // Trigger the callback if a face is detected
         if !faceMetadataObjects.isEmpty {
             self.onFaceDetected?()
+        } else {
+            self.onNoFaceDetected?()
         }
+        
     }
 
     var faceDetectionBoxes: [UIView] = []
